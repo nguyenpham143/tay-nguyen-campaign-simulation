@@ -12,9 +12,8 @@
 
 using namespace std;
 
-void tnc_tc_01() {
+void tnc_tc_01(const string &input_file = "tests/tnc_tc_01_input") {
     cout << "----- Sample Testcase 01 -----" << endl;
-    string input_file("tnc_tc_01_input");
     int LF1[17], LF2[17], EXP1, EXP2, T1, T2, E;
     if (!readFile(input_file, LF1, LF2, EXP1, EXP2, T1, T2, E)) {
         return;
@@ -26,6 +25,7 @@ void tnc_tc_01() {
 }
 
 int main(int argc, const char * argv[]) {
-    tnc_tc_01();
+    string input_file = (argc > 1) ? argv[1] : "tests/tnc_tc_01_input";
+    tnc_tc_01(input_file);
     return 0;
 }
